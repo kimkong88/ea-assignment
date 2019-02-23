@@ -1,4 +1,6 @@
 # vs related
 .vs/
 .vscode/
-**/bin/
+bld/
+[Bb]in/
+[Oo]bj/
