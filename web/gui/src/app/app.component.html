@@ -1,1 +1,6 @@
-<app-login-view></app-login-view>
+<div *ngIf="isLoggedIn; else isLoggedOut">
+	<app-blog-view></app-blog-view>
+</div>
+<ng-template #isLoggedOut>
+	<app-login-view></app-login-view>
+</ng-template>

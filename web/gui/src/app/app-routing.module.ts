@@ -1,26 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { url } from './shared/constants/url';
-import { BlogViewComponent } from './blog-view/blog-view.component';
-import { LoginViewComponent } from './login-view/login-view.component';
+import { LoginViewRoutingModule } from './login-view/login-view-routing.module';
+import { BlogViewRoutingModule } from './blog-view/blog-view-routing.module';
 
 export const appRoutes: Routes = [
 	{
-		path: '**',
-		redirectTo: url.default
-	},
-	{
-		path: 'login',
-		component: LoginViewComponent
-	},
-	{
-		path: 'blog',
-		component: BlogViewComponent
+		path: '',
+		redirectTo: url.default,
+		pathMatch: 'full'
 	}
 ];
 
 @NgModule({
 	imports: [RouterModule.forRoot(appRoutes, {})],
-	exports: [RouterModule]
+	exports: [RouterModule, LoginViewRoutingModule, BlogViewRoutingModule]
 })
 export class AppRoutingModule {}
