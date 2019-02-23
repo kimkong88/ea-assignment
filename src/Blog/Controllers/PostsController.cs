@@ -49,7 +49,7 @@ namespace Assignment.Blog.Controllers
 
 		/// <summary>Updates a post and returns the updated post.</summary>
 		/// <param name="post">A post object.</param>
-		[HttpPut, Route("{id}")]
+		[HttpPut]
 		public ActionResult<Post> UpdatePost([FromBody] Post post)
 		{
 			var updatedPost = postService.UpdatePost(post);
