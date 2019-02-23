@@ -4,3 +4,10 @@
 bld/
 [Bb]in/
 [Oo]bj/
+
+# npm
+node_modules/
+
+# vscode config files
+.vscode/
+.editorconfig
