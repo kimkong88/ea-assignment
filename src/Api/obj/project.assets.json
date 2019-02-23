@@ -42,6 +42,19 @@
           "lib/netstandard2.0/Autofac.Extras.Moq.dll": {}
         }
       },
+      "AutoMapper/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "Castle.Core/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -4710,6 +4723,7 @@
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "Assignment.Data": "1.0.0",
+          "AutoMapper": "8.0.0",
           "Autofac": "4.8.1",
           "Common": "1.0.0",
           "Microsoft.AspNetCore.Mvc": "2.2.0",
@@ -4728,6 +4742,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "AutoMapper": "8.0.0",
           "Autofac": "4.8.1",
           "Microsoft.EntityFrameworkCore.Design": "2.2.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
@@ -4806,6 +4821,22 @@
         "lib/netstandard2.0/Autofac.Extras.Moq.dll",
         "lib/netstandard2.0/Autofac.Extras.Moq.pdb",
         "lib/netstandard2.0/Autofac.Extras.Moq.xml"
+      ]
+    },
+    "AutoMapper/8.0.0": {
+      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "type": "package",
+      "path": "automapper/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "automapper.8.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
       ]
     },
     "Castle.Core/4.0.0": {

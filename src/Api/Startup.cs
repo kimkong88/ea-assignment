@@ -1,7 +1,9 @@
 ﻿using System;
+using Assignment.Blog.Profiles;
 using Assignment.Data;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Common.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,6 +20,12 @@ namespace Assignment.Api
 	{
 		public Startup(IConfiguration configuration)
 		{
+			Mapper.Initialize(config =>
+			{
+				config.AddProfile<PostProfile>();
+				config.AddProfile<AuthorProfile>();
+				config.AddProfile<CommentProfile>();
+			});
 			Configuration = configuration;
 		}
 
