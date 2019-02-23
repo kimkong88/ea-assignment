@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "Autofac/4.6.1": {
+      "Autofac/4.8.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.0",
@@ -4704,18 +4704,34 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Assignment.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Autofac": "4.8.1",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.2"
+        },
+        "compile": {
+          "bin/placeholder/Assignment.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assignment.Data.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Autofac/4.6.1": {
-      "sha512": "/feXiAKiSe9XLK+fdnz0p1iDg6JCkOhjqMkw9ewGy0f6IzXgmPLDRa4FUg6nIGRm2sTO677w/76uJ5OJU6EiyA==",
+    "Autofac/4.8.1": {
+      "sha512": "aIT9rupCOdab5RMfxvWTBmOxGU77tLqmvSF4V89SzV6oQcJrtuKw/Xp55xy9EijSktbMka55SbroAPOyT+lziw==",
       "type": "package",
-      "path": "autofac/4.6.1",
+      "path": "autofac/4.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "autofac.4.6.1.nupkg.sha512",
+        "autofac.4.8.1.nupkg.sha512",
         "autofac.nuspec",
         "lib/net45/Autofac.dll",
         "lib/net45/Autofac.xml",
@@ -12725,10 +12741,16 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Assignment.Data/1.0.0": {
+      "type": "project",
+      "path": "../Data/Data.csproj",
+      "msbuildProject": "../Data/Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Assignment.Data >= 1.0.0",
       "Autofac.Extensions.DependencyInjection >= 4.3.1",
       "Autofac.Extras.Moq >= 4.3.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
@@ -12768,7 +12790,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projects\\ea-assignment\\src\\Data\\Data.csproj": {
+              "projectPath": "C:\\Projects\\ea-assignment\\src\\Data\\Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

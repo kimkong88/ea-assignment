@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Data.Entities.Blog
 {
+	[Table("post", Schema = "blog")]
 	public class Post
 	{
 		[Key]

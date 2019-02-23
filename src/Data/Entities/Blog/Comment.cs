@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Data.Entities.Blog
 {
+	[Table("comment", Schema = "blog")]
 	public class Comment
 	{
 		[Key]
