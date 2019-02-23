@@ -34,7 +34,7 @@ namespace Assignment.Api
 				}
 				catch (Exception exception)
 				{
-					// add logging
+					// TODO: add logging
 					Console.WriteLine(exception);
 				}
 			}
