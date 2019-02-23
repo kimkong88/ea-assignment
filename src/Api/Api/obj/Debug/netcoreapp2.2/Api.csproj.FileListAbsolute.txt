@@ -1,0 +1,3 @@
+C:\Projects\ea-assignment\src\Api\Api\obj\Debug\netcoreapp2.2\Api.csproj.CoreCompileInputs.cache
+C:\Projects\ea-assignment\src\Api\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfoInputs.cache
+C:\Projects\ea-assignment\src\Api\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfo.cs
