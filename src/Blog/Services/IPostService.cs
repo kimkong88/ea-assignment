@@ -6,10 +6,14 @@ namespace Assignment.Blog.Services
 {
 	public interface IPostService
 	{
-		Guid CreatePost(PostDto postDto);
+		Guid? CreatePost(PostDto postDto);
+
 		void DeletePost(Guid id);
+
 		PostDto GetPost(Guid id);
+
 		IEnumerable<PostDto> GetPosts();
+
 		PostDto UpdatePost(PostDto postDto);
 	}
 }

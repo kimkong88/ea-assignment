@@ -48,7 +48,7 @@ namespace Assignment.Blog.Services
 			return postDto;
 		}
 
-		public Guid CreatePost(PostDto postDto)
+		public Guid? CreatePost(PostDto postDto)
 		{
 			var post = Mapper.Map<PostDto, Post>(postDto);
 
@@ -56,7 +56,7 @@ namespace Assignment.Blog.Services
 
 			applicationDbContext.SaveChanges();
 
-			return post.Id.Value;
+			return post.Id;
 		}
 
 		public void DeletePost(Guid id)

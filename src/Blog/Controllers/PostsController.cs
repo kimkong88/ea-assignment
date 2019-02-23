@@ -21,7 +21,7 @@ namespace Assignment.Blog.Controllers
 		/// <summary>Returns a list of all posts</summary>
 		[HttpGet]
 		[Produces("application/json")]
-		public ActionResult<IList<Post>> GetPosts()
+		public ActionResult<IEnumerable<PostDto>> GetPosts()
 		{
 			var posts = postService.GetPosts();
 
@@ -39,7 +39,7 @@ namespace Assignment.Blog.Controllers
 		}
 
 		/// <summary>Creates a post and returns its ID.</summary>
-		/// <param name="post">A post object.</param>
+		/// <param name="postDto">A post object.</param>
 		[HttpPost]
 		public ActionResult<Guid> CreatePost([FromBody] PostDto postDto)
 		{
@@ -49,7 +49,7 @@ namespace Assignment.Blog.Controllers
 		}
 
 		/// <summary>Updates a post and returns the updated post.</summary>
-		/// <param name="post">A post object.</param>
+		/// <param name="postDto">A post object.</param>
 		[HttpPut]
 		public ActionResult<Post> UpdatePost([FromBody] PostDto postDto)
 		{

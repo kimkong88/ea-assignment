@@ -20,7 +20,7 @@ namespace Assignment.Blog.Controllers
 		/// <summary>Returns a list of all authors</summary>
 		[HttpGet]
 		[Produces("application/json")]
-		public ActionResult<IList<AuthorDto>> GetPosts()
+		public ActionResult<IEnumerable<AuthorDto>> GetPosts()
 		{
 			var authors = authorService.GetAuthors();
 
@@ -28,11 +28,11 @@ namespace Assignment.Blog.Controllers
 		}
 
 		/// <summary>Creates an author and returns its ID.</summary>
-		/// <param name="post">A author object.</param>
+		/// <param name="authorDto">A author object.</param>
 		[HttpPost]
-		public ActionResult<Guid> CreateAuthor([FromBody] AuthorDto AuthorDto)
+		public ActionResult<Guid> CreateAuthor([FromBody] AuthorDto authorDto)
 		{
-			var createdAuthorId = authorService.CreateAuthor(AuthorDto);
+			var createdAuthorId = authorService.CreateAuthor(authorDto);
 
 			return Created(string.Empty, createdAuthorId);
 		}
