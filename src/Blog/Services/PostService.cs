@@ -40,5 +40,39 @@ namespace Assignment.Blog.Services
 
 			return post;
 		}
+
+		public Guid CreatePost(Post post)
+		{
+			applicationDbContext.Posts.Add(post);
+
+			applicationDbContext.SaveChanges();
+
+			return post.Id;
+		}
+
+		public void DeletePost(Guid id)
+		{
+			var post = applicationDbContext.Posts.FirstOrDefault(p => p.Id == id);
+			if (post == null)
+			{
+				// TODO: throw appropirate exception later
+				throw new Exception();
+			}
+			applicationDbContext.Posts.Remove(post);
+
+			applicationDbContext.SaveChanges();
+		}
+
+		public Post UpdatePost(Post post)
+		{
+			var postToUpdate = GetPost(post.Id);
+
+			postToUpdate.Title = post.Title;
+			postToUpdate.Content = post.Content;
+
+			applicationDbContext.SaveChanges();
+
+			return postToUpdate;
+		}
 	}
 }
