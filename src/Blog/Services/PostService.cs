@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Assignment.Blog.Services
 {
-	public class PostService
+	public class PostService : IPostService
 	{
 		private readonly IApplicationDbContext applicationDbContext;
 		public PostService(IApplicationDbContext applicationDbContext)

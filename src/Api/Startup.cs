@@ -2,6 +2,7 @@
 using Assignment.Data;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Common.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -61,7 +62,7 @@ namespace Assignment.Api
 
 			app.UseSwaggerUI(c =>
 			{
-				c.SwaggerEndpoint($"/swagger/v1/swagger.json", "Assignment API");
+				c.SwaggerEndpoint($"/swagger/{ApiVersion.Version}/swagger.json", "EA Assignment API");
 			});
 		}
 
@@ -78,7 +79,7 @@ namespace Assignment.Api
 		{
 			services.AddSwaggerGen(c =>
 			{
-				c.SwaggerDoc("v1", new Info { Title = "EA Assignment API", Version = "v1" });
+				c.SwaggerDoc(ApiVersion.Version, new Info { Title = "EA Assignment API", Version = ApiVersion.Version });
 				c.DescribeAllEnumsAsStrings();
 			});
 		}

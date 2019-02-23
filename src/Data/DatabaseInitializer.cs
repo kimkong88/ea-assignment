@@ -4,7 +4,7 @@
 	{
 		public static void Initialize(ApplicationDbContext applicationDbContext)
 		{
-			applicationDbContext.Database.EnsureDeleted();
+			//applicationDbContext.Database.EnsureDeleted();
 			applicationDbContext.Database.EnsureCreated();
 		}
 	}
