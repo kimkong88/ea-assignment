@@ -11,3 +11,6 @@ node_modules/
 # vscode config files
 .vscode/
 .editorconfig
+
+# gui
+[Dd]ist/
