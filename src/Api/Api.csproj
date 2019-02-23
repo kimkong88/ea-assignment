@@ -6,6 +6,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <UserSecretsId>ce459c15-fc06-40af-8078-da04dc7844f3</UserSecretsId>
     <RootNamespace>Assignment.Api</RootNamespace>
+    <AssemblyName>Assignment.Api</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
