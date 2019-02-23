@@ -26,3 +26,6 @@ C:\Projects\ea-assignment\src\Api\obj\Debug\netcoreapp2.2\Api.RazorTargetAssembl
 C:\Projects\ea-assignment\src\Api\obj\Debug\netcoreapp2.2\Assignment.Api.dll
 C:\Projects\ea-assignment\src\Api\obj\Debug\netcoreapp2.2\Assignment.Api.pdb
 C:\Projects\ea-assignment\src\Api\obj\Debug\netcoreapp2.2\Api.csprojAssemblyReference.cache
+C:\Projects\ea-assignment\src\Api\bin\Debug\netcoreapp2.2\Assignment.Data.dll
+C:\Projects\ea-assignment\src\Api\bin\Debug\netcoreapp2.2\Assignment.Data.pdb
+C:\Projects\ea-assignment\src\Api\obj\Debug\netcoreapp2.2\Api.csproj.CopyComplete

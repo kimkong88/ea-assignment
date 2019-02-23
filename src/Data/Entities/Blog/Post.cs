@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Assignment.Data.Entities.Blog
 {
 	[Table("post", Schema = "blog")]
-	public class Post
+	public class Post : ITrackableEntity
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,8 +20,14 @@ namespace Assignment.Data.Entities.Blog
 		[Column("title")]
 		public string Title { get; set; }
 
-		[Column("context")]
-		public string Context { get; set; }
+		[Column("content")]
+		public string Content { get; set; }
+
+		[Column("created_at")]
+		public DateTimeOffset CreatedDateTime { get; set; }
+
+		[Column("updated_at")]
+		public DateTimeOffset UpdatedDateTime { get; set; }
 
 		public Author Author { get; set; }
 
