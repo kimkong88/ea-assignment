@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Assignment.Data.Entities.Post
+namespace Assignment.Data.Entities.Blog
 {
 	public class Comment
 	{
@@ -10,5 +10,14 @@ namespace Assignment.Data.Entities.Post
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("id")]
 		public Guid Id { get; set; }
+
+		[ForeignKey("Author")]
+		[Column("author_id")]
+		public Guid AuthorId { get; set; }
+
+		[Column("context")]
+		public string Context { get; set; }
+
+		public Author Author { get; set; }
 	}
 }

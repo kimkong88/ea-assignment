@@ -2,19 +2,16 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Assignment.Data.Entities.Post
+namespace Assignment.Data.Entities.Blog
 {
-	public class PostComment
+	public class Author
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("id")]
 		public Guid Id { get; set; }
 
-		[Column("post_id")]
-		public Guid PostId { get; set; }
-
-		[Column("comment_id")]
-		public Guid CommentId { get; set; }
+		[Column("name")]
+		public string Name { get; set; }
 	}
 }

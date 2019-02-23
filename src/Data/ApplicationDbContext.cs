@@ -1,4 +1,4 @@
-﻿using Assignment.Data.Entities.Post;
+﻿using Assignment.Data.Entities.Blog;
 using Microsoft.EntityFrameworkCore;
 
 namespace Assignment.Data
@@ -12,8 +12,6 @@ namespace Assignment.Data
 		public DbSet<Post> Posts { get; set; }
 
 		public DbSet<Comment> Comments { get; set; }
-
-		public DbSet<PostComment> PostComments { get; set; }
 
 		public DbSet<Author> Authors { get; set; }
 	}
