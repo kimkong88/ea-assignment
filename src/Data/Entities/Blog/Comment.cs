@@ -10,15 +10,15 @@ namespace Assignment.Data.Entities.Blog
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("id")]
-		public Guid Id { get; set; }
+		public Guid? Id { get; set; }
 
 		[ForeignKey("Author")]
 		[Column("author_id")]
-		public Guid AuthorId { get; set; }
+		public Guid? AuthorId { get; set; }
 
 		[ForeignKey("Post")]
 		[Column("post_id")]
-		public Guid PostId { get; set; }
+		public Guid? PostId { get; set; }
 
 		[Column("content")]
 		public string Content { get; set; }

@@ -8,3 +8,4 @@ C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfoInpu
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfo.cs
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Assignment.Data.dll
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Assignment.Data.pdb
+C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Data.csprojAssemblyReference.cache

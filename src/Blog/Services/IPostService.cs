@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assignment.Data.Entities.Blog;
+using Assignment.Blog.Dto;
 
 namespace Assignment.Blog.Services
 {
 	public interface IPostService
 	{
-		Guid CreatePost(Post post);
+		Guid CreatePost(PostDto postDto);
 		void DeletePost(Guid id);
-		Post GetPost(Guid id);
-		ICollection<Post> GetPosts();
-		Post UpdatePost(Post post);
+		PostDto GetPost(Guid id);
+		IEnumerable<PostDto> GetPosts();
+		PostDto UpdatePost(PostDto postDto);
 	}
 }

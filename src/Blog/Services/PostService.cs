@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assignment.Blog.Dto;
+using Assignment.Common.Helpers;
 using Assignment.Data;
 using Assignment.Data.Entities.Blog;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace Assignment.Blog.Services
@@ -15,7 +18,7 @@ namespace Assignment.Blog.Services
 			this.applicationDbContext = applicationDbContext;
 		}
 
-		public ICollection<Post> GetPosts()
+		public IEnumerable<PostDto> GetPosts()
 		{
 			var query = applicationDbContext.Posts.AsQueryable();
 
@@ -25,10 +28,12 @@ namespace Assignment.Blog.Services
 
 			var posts = query.ToList();
 
-			return posts;
+			var postDtos = Mapper.Instance.MapEnumerable<Post, PostDto>(posts);
+
+			return postDtos;
 		}
 
-		public Post GetPost(Guid id)
+		public PostDto GetPost(Guid id)
 		{
 			var post = applicationDbContext.Posts.FirstOrDefault(p => p.Id == id);
 
@@ -38,16 +43,20 @@ namespace Assignment.Blog.Services
 				throw new Exception();
 			}
 
-			return post;
+			var postDto = Mapper.Map<Post, PostDto>(post);
+
+			return postDto;
 		}
 
-		public Guid CreatePost(Post post)
+		public Guid CreatePost(PostDto postDto)
 		{
+			var post = Mapper.Map<PostDto, Post>(postDto);
+
 			applicationDbContext.Posts.Add(post);
 
 			applicationDbContext.SaveChanges();
 
-			return post.Id;
+			return post.Id.Value;
 		}
 
 		public void DeletePost(Guid id)
@@ -63,12 +72,12 @@ namespace Assignment.Blog.Services
 			applicationDbContext.SaveChanges();
 		}
 
-		public Post UpdatePost(Post post)
+		public PostDto UpdatePost(PostDto postDto)
 		{
-			var postToUpdate = GetPost(post.Id);
+			var postToUpdate = GetPost(postDto.Id.Value);
 
-			postToUpdate.Title = post.Title;
-			postToUpdate.Content = post.Content;
+			postToUpdate.Title = postDto.Title;
+			postToUpdate.Content = postDto.Content;
 
 			applicationDbContext.SaveChanges();
 

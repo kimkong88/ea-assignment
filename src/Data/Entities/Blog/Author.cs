@@ -10,7 +10,7 @@ namespace Assignment.Data.Entities.Blog
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("id")]
-		public Guid Id { get; set; }
+		public Guid? Id { get; set; }
 
 		[Column("name")]
 		public string Name { get; set; }

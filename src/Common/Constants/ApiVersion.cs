@@ -1,4 +1,4 @@
-﻿namespace Common.Constants
+﻿namespace Assignment.Common.Constants
 {
 	public static class ApiVersion
 	{

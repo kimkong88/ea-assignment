@@ -4722,10 +4722,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "Assignment.Common": "1.0.0",
           "Assignment.Data": "1.0.0",
           "AutoMapper": "8.0.0",
           "Autofac": "4.8.1",
-          "Common": "1.0.0",
           "Microsoft.AspNetCore.Mvc": "2.2.0",
           "Microsoft.EntityFrameworkCore.Design": "2.2.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
@@ -4736,6 +4736,20 @@
         },
         "runtime": {
           "bin/placeholder/Assignment.Blog.dll": {}
+        }
+      },
+      "Assignment.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "AutoMapper": "8.0.0",
+          "Autofac": "4.8.1"
+        },
+        "compile": {
+          "bin/placeholder/Assignment.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assignment.Common.dll": {}
         }
       },
       "Assignment.Data/1.0.0": {
@@ -4753,19 +4767,6 @@
         },
         "runtime": {
           "bin/placeholder/Assignment.Data.dll": {}
-        }
-      },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "dependencies": {
-          "Autofac": "4.8.1"
-        },
-        "compile": {
-          "bin/placeholder/Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Common.dll": {}
         }
       }
     }
@@ -12810,24 +12811,25 @@
       "path": "../Blog/Blog.csproj",
       "msbuildProject": "../Blog/Blog.csproj"
     },
+    "Assignment.Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Assignment.Data/1.0.0": {
       "type": "project",
       "path": "../Data/Data.csproj",
       "msbuildProject": "../Data/Data.csproj"
-    },
-    "Common/1.0.0": {
-      "type": "project",
-      "path": "../Common/Common.csproj",
-      "msbuildProject": "../Common/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Assignment.Blog >= 1.0.0",
+      "Assignment.Common >= 1.0.0",
       "Assignment.Data >= 1.0.0",
+      "AutoMapper >= 8.0.0",
       "Autofac.Extensions.DependencyInjection >= 4.3.1",
       "Autofac.Extras.Moq >= 4.3.0",
-      "Common >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -12887,6 +12889,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Autofac.Extensions.DependencyInjection": {
             "target": "Package",
             "version": "[4.3.1, )"

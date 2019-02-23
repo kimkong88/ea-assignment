@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assignment.Blog.Dto;
 using Assignment.Blog.Services;
+using Assignment.Common.Constants;
 using Assignment.Data.Entities.Blog;
-using Common.Constants;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.Blog.Controllers
@@ -40,9 +41,9 @@ namespace Assignment.Blog.Controllers
 		/// <summary>Creates a post and returns its ID.</summary>
 		/// <param name="post">A post object.</param>
 		[HttpPost]
-		public ActionResult<Guid> CreatePost([FromBody] Post post)
+		public ActionResult<Guid> CreatePost([FromBody] PostDto postDto)
 		{
-			var createdPostId = postService.CreatePost(post);
+			var createdPostId = postService.CreatePost(postDto);
 
 			return Created(string.Empty, createdPostId);
 		}
@@ -50,9 +51,9 @@ namespace Assignment.Blog.Controllers
 		/// <summary>Updates a post and returns the updated post.</summary>
 		/// <param name="post">A post object.</param>
 		[HttpPut]
-		public ActionResult<Post> UpdatePost([FromBody] Post post)
+		public ActionResult<Post> UpdatePost([FromBody] PostDto postDto)
 		{
-			var updatedPost = postService.UpdatePost(post);
+			var updatedPost = postService.UpdatePost(postDto);
 
 			return Ok(updatedPost);
 		}

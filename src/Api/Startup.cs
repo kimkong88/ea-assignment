@@ -1,10 +1,10 @@
 ﻿using System;
 using Assignment.Blog.Profiles;
+using Assignment.Common.Constants;
 using Assignment.Data;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
-using Common.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
