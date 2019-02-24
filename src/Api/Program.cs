@@ -1,8 +1,5 @@
-﻿using System;
-using Assignment.Data;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Assignment.Api
 {
@@ -11,7 +8,6 @@ namespace Assignment.Api
 		public static void Main(string[] args)
 		{
 			var host = BuildWebHost(args);
-			InitializeDatabase(host);
 			host.Run();
 		}
 
@@ -20,24 +16,6 @@ namespace Assignment.Api
 			return WebHost.CreateDefaultBuilder(args)
 				.UseStartup<Startup>()
 				.Build();
-		}
-
-		private static void InitializeDatabase(IWebHost host)
-		{
-			using (var scope = host.Services.CreateScope())
-			{
-				var services = scope.ServiceProvider;
-				try
-				{
-					var applicationDbContext = services.GetRequiredService<ApplicationDbContext>();
-					DatabaseInitializer.Initialize(applicationDbContext);
-				}
-				catch (Exception exception)
-				{
-					// TODO: add logging
-					Console.WriteLine(exception);
-				}
-			}
 		}
 	}
 }

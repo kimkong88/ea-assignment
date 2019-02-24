@@ -3,9 +3,9 @@ C:\Projects\ea-assignment\src\Data\bin\Debug\netcoreapp2.2\Assignment.Data.runti
 C:\Projects\ea-assignment\src\Data\bin\Debug\netcoreapp2.2\Assignment.Data.runtimeconfig.dev.json
 C:\Projects\ea-assignment\src\Data\bin\Debug\netcoreapp2.2\Assignment.Data.dll
 C:\Projects\ea-assignment\src\Data\bin\Debug\netcoreapp2.2\Assignment.Data.pdb
-C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Data.csprojAssemblyReference.cache
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Data.csproj.CoreCompileInputs.cache
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfoInputs.cache
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfo.cs
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Assignment.Data.dll
 C:\Projects\ea-assignment\src\Data\obj\Debug\netcoreapp2.2\Assignment.Data.pdb
+C:\projects\ea-assignment\src\data\obj\Debug\netcoreapp2.2\Data.csprojAssemblyReference.cache
