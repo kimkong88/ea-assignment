@@ -35,7 +35,10 @@ namespace Assignment.Blog.Services
 
 		public PostDto GetPost(Guid id)
 		{
-			var post = applicationDbContext.Posts.FirstOrDefault(p => p.Id == id);
+			var post = applicationDbContext.Posts
+				.Include(p => p.Author)
+				.Include(p => p.Comments)
+				.FirstOrDefault(p => p.Id == id);
 
 			if (post == null)
 			{

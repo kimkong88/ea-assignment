@@ -12,6 +12,9 @@ namespace Assignment.Blog.Dto
 		public string Content { get; set; }
 
 		[JsonProperty]
+		public string AuthorName { get; set; }
+
+		[JsonProperty]
 		public Guid? AuthorId { get; set; }
 
 		[JsonProperty]

@@ -1,0 +1,38 @@
+<div *ngIf="post" class="container">
+	<div class="post col-sm-10">
+		<h1>{{ post.title }}</h1>
+		<p>
+			By <span>{{ post.authorName }}</span>
+		</p>
+		<p>
+			{{ post.createdAt }}
+		</p>
+		<p>
+			{{ post.content }}
+		</p>
+		<div class="comment-box">
+			<dx-text-area
+				class="comment-box"
+				height="120px"
+				[maxLength]="400"
+				[(value)]="comment"
+			></dx-text-area>
+			<dx-button text="Publish" (onClick)="onButtonClick()"></dx-button>
+		</div>
+		<div *ngIf="post.comments.length > 0" class="comment-list">
+			<dx-list
+				[dataSource]="post.comments"
+				[focusStateEnabled]="false"
+				[hoverStateEnabled]="false"
+				[activeStateEnabled]="false"
+			>
+				<div *dxTemplate="let comment of 'item'">
+					<div class="comment-card">
+						<p class="comment-author">{{ comment.authorName }}</p>
+						<p class="comment-content">{{ comment.content }}</p>
+					</div>
+				</div>
+			</dx-list>
+		</div>
+	</div>
+</div>
