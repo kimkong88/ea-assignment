@@ -17,14 +17,30 @@ namespace Assignment.Blog.Controllers
 			this.authorService = authorService;
 		}
 
-		/// <summary>Returns a list of all authors</summary>
+		/// <summary>Returns a list of all authors.</summary>
 		[HttpGet]
 		[Produces("application/json")]
-		public ActionResult<IEnumerable<AuthorDto>> GetPosts()
+		public ActionResult<IEnumerable<AuthorDto>> GetAuthors()
 		{
 			var authors = authorService.GetAuthors();
 
 			return Json(authors);
+		}
+
+		/// <summary>Returns an author object.</summary>
+		/// <param name="authorName">An author name.</param>
+		[HttpGet("{authorName}")]
+		[Produces("application/json")]
+		public ActionResult<AuthorDto> GetAuthorByName(string authorName)
+		{
+			var authorDto = authorService.GetAuthorByName(authorName);
+
+			if (authorDto == null)
+			{
+				return Ok(null);
+			}
+
+			return Ok(authorDto);
 		}
 
 		/// <summary>Creates an author and returns its ID.</summary>

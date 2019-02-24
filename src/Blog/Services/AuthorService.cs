@@ -37,5 +37,14 @@ namespace Assignment.Blog.Services
 
 			return authorDtos;
 		}
+
+		public AuthorDto GetAuthorByName(string authorName)
+		{
+			var author = applicationDbContext.Authors.Where(a => a.Name.Equals(authorName, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+
+			var authorDto = Mapper.Map<Author, AuthorDto>(author);
+
+			return authorDto;
+		}
 	}
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { loginKey } from '../shared/services/login.service';
 
 @Component({
 	selector: 'app-blog-view',
@@ -7,7 +8,13 @@ import { Router } from '@angular/router';
 	styleUrls: ['./blog-view.component.css']
 })
 export class BlogViewComponent {
+	name: string;
 	constructor(private router: Router) {
 		this.router.navigateByUrl('/blogs');
+		this.getName();
+	}
+
+	getName() {
+		this.name = JSON.parse(sessionStorage.getItem(loginKey)).name;
 	}
 }

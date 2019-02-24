@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import { IAuthor } from '../models/author.model';
 
-export const loginKey = 'LOGIN_KEY';
+export const loginKey = 'AUTHOR_SETTINGS';
 
 @Injectable()
 export class LoginService {
 	constructor() {}
 
-	login() {
-		sessionStorage.setItem(loginKey, 'loggedIn');
+	login(author: IAuthor) {
+		sessionStorage.setItem(loginKey, JSON.stringify(author));
 	}
 
 	isLoggedIn() {
-		return sessionStorage.getItem(loginKey);
+		return sessionStorage.getItem(loginKey) !== null;
 	}
 }

@@ -16,6 +16,8 @@ import { BlogViewService } from './blog-view/blog-view-service';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogPostViewComponent } from './blog-view/blog-post-view/blog-post-view.component';
 import { BlogListViewComponent } from './blog-view/blog-list-view/blog-list-view.component';
+import { AuthorService } from './shared/services/author.service';
+import { CommentService } from './blog-view/blog-post-view/comment-service';
 
 @NgModule({
 	declarations: [
@@ -34,7 +36,7 @@ import { BlogListViewComponent } from './blog-view/blog-list-view/blog-list-view
 		DxListModule,
 		DxTextAreaModule
 	],
-	providers: [LoginService, BlogViewService],
+	providers: [LoginService, BlogViewService, AuthorService, CommentService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

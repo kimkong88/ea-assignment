@@ -38,6 +38,7 @@ namespace Assignment.Blog.Services
 			var post = applicationDbContext.Posts
 				.Include(p => p.Author)
 				.Include(p => p.Comments)
+					.ThenInclude(c => c.Author)
 				.FirstOrDefault(p => p.Id == id);
 
 			if (post == null)

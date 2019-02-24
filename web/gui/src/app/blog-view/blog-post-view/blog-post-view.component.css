@@ -4,10 +4,39 @@
 }
 
 .post {
+	margin-top: 64px;
+	margin-bottom: 48px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.post-title {
+	font-size: 48px;
+	font-weight: bolder;
+}
+
+.post-author {
+	color: gray;
+	font-style: italic;
+	font-size: 18px;
+}
+
+.post-date {
+	color: gray;
+	font-style: italic;
+	font-size: 18px;
+}
+
+.post-content {
+	font-size: 24px;
+	margin-top: 24px;
+}
+
+.comment-box {
+	margin-top: 24px;
+	display: block;
+	height: 200px;
+}
 .comment-box dx-text-area {
 	font-size: 24px;
 }

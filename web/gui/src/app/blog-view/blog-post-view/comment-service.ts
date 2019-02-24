@@ -5,7 +5,7 @@ import { IComment } from 'src/app/shared/models/comment.model';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
-const serviceUrl = `${url.base}/blog/coments`;
+const serviceUrl = `${url.base}/blog/comments`;
 
 @Injectable()
 export class CommentService {

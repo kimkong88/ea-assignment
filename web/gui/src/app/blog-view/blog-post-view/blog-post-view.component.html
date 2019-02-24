@@ -1,23 +1,26 @@
 <div *ngIf="post" class="container">
 	<div class="post col-sm-10">
-		<h1>{{ post.title }}</h1>
-		<p>
+		<p class="post-title">{{ post.title }}</p>
+		<p class="post-author">
 			By <span>{{ post.authorName }}</span>
 		</p>
-		<p>
+		<p class="post-date">
 			{{ post.createdAt }}
 		</p>
-		<p>
+		<p class="post-content">
 			{{ post.content }}
 		</p>
 		<div class="comment-box">
 			<dx-text-area
-				class="comment-box"
 				height="120px"
 				[maxLength]="400"
 				[(value)]="comment"
 			></dx-text-area>
-			<dx-button text="Publish" (onClick)="onButtonClick()"></dx-button>
+			<dx-button
+				text="Publish"
+				type="normal"
+				(onClick)="onSubmit($event)"
+			></dx-button>
 		</div>
 		<div *ngIf="post.comments.length > 0" class="comment-list">
 			<dx-list
