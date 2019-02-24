@@ -11,3 +11,43 @@ services:
         
         ports:
             - 80:80
+            
+        depends_on:
+            - api
+    api:
+        build:
+            context: .
+            dockerfile: docker/api/Dockerfile
+            target: assignment-api-runtime
+
+        restart: always
+
+        ports:
+            - 5000:5000
+
+        depends_on:
+            - db
+
+        volumes:
+            - assignment-app-data:/opt/ea-assignment
+        
+    db:
+        build:
+            context: .
+            dockerfile: docker/api/Dockerfile
+            target: assignment-database
+
+        restart: always
+        ports:
+            - 5431:5432
+        environment:
+            - POSTGRES_DB=assignment_db
+            - POSTGRES_PASSWORD=admin
+            - POSTGRES_USER=admin
+
+        volumes:
+            - assignment-db-data:/var/lib/postgresql/data
+            
+volumes:
+    assignment-db-data:
+    assignment-app-data:

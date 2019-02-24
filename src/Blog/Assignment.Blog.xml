@@ -24,7 +24,7 @@
             <param name="commentDto">A comment object.</param>
         </member>
         <member name="M:Assignment.Blog.Controllers.CommentsController.UpdateComment(Assignment.Blog.Dto.CommentDto)">
-            <summary>Updates a comment and returns the updated commen.</summary>
+            <summary>Updates a comment and returns the updated comment.</summary>
             <param name="commentDto">A comment object.</param>
         </member>
         <member name="M:Assignment.Blog.Controllers.CommentsController.Delete(System.Guid)">

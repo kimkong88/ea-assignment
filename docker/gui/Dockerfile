@@ -1,4 +1,8 @@
-## GUI BUILDER ##
+#############
+#### GUI ####
+#############
+
+## GUI Builder ##
 FROM node:8 AS assignment-gui-builder
 
 # Install newest npm@6.*
@@ -13,7 +17,7 @@ RUN npm ci
 COPY web/gui ./
 RUN npm run-script build-prod
 
-## GUI RUNNER ##
+## GUI Runtime Image ##
 FROM nginx:stable AS assignment-gui-runtime
 WORKDIR /app
 COPY --from=assignment-gui-builder /app/gui/dist ./gui
