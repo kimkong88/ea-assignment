@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { LoginService } from '../shared/services/login.service';
 
 @Component({
@@ -8,10 +7,21 @@ import { LoginService } from '../shared/services/login.service';
 	styleUrls: ['./login-view.component.css']
 })
 export class LoginViewComponent {
-	constructor(private router: Router, private loginService: LoginService) {}
+	textBoxValue = '';
+	validation = true;
+
+	constructor(private loginService: LoginService) {}
 
 	onButtonClick() {
+		this.validate();
 		this.loginService.login();
 		location.reload();
+	}
+
+	validate() {
+		if (!this.textBoxValue.trim()) {
+			this.validation = false;
+			return;
+		}
 	}
 }

@@ -1,1 +1,41 @@
-asdasd
+<div class="landing-page">
+	<h1 class="heading">EA Assingment</h1>
+</div>
+<div class="container">
+	<div class="posts col-sm-10">
+		<dx-list
+			[dataSource]="dataSource"
+			pageLoadMode="nextButton"
+			(onItemClick)="onPostClick($event)"
+			[focusStateEnabled]="false"
+		>
+			<div *dxTemplate="let post of 'item'">
+				<div *ngIf="dataSource">
+					<p class="post-title">{{ post.title }}</p>
+					<p class="post-content">{{ post.content }}</p>
+					<p class="post-meta">
+						<span
+							*ngIf="post.comments.length > 1; else noComment"
+							class="comment-count"
+						>
+							{{ post.comments.length }} comments
+						</span>
+						<ng-template #noComment>
+							<span> {{ post.comments.length }} comment </span>
+						</ng-template>
+						<span class="author-date">
+							Posted By
+							<span class="post-author">{{
+								post.authorName
+							}}</span>
+							on {{ post.createdAt }}
+						</span>
+					</p>
+				</div>
+			</div>
+		</dx-list>
+	</div>
+</div>
+<div class="floating-button">
+	<i class="fa fa-pencil"></i>
+</div>

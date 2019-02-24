@@ -6,6 +6,8 @@
 				class="login-name"
 				stylingMode="underlined"
 				mode="text"
+				[(isValid)]="validation"
+				[(value)]="textBoxValue"
 				maxLength="16"
 			></dx-text-box>
 			<dx-button

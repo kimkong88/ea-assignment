@@ -19,6 +19,15 @@ namespace Assignment.Blog.Dto
 		public Guid? AuthorId { get; set; }
 
 		[JsonProperty]
+		public string AuthorName { get; set; }
+
+		[JsonProperty]
 		public IList<CommentDto> Comments { get; set; }
+
+		[JsonProperty]
+		public DateTimeOffset CreatedAt { get; set; }
+
+		[JsonProperty]
+		public DateTimeOffset UpdatedAt { get; set; }
 	}
 }
