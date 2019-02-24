@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assignment.Blog</name>
+    </assembly>
+    <members>
+        <member name="M:Assignment.Blog.Controllers.AuthorsController.GetAuthors">
+            <summary>Returns a list of all authors.</summary>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.AuthorsController.GetAuthorByName(System.String)">
+            <summary>Returns an author object.</summary>
+            <param name="authorName">An author name.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.AuthorsController.CreateAuthor(Assignment.Blog.Dto.AuthorDto)">
+            <summary>Creates an author and returns its ID.</summary>
+            <param name="authorDto">A author object.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.CommentsController.GetCommentsByPostId(System.Guid)">
+            <summary>Returns a list of comments associated with given post ID.</summary>
+            <param name="postId">A post ID.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.CommentsController.CreateComment(Assignment.Blog.Dto.CommentDto)">
+            <summary>Creates a comment and returns its ID.</summary>
+            <param name="commentDto">A comment object.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.CommentsController.UpdateComment(Assignment.Blog.Dto.CommentDto)">
+            <summary>Updates a comment and returns the updated commen.</summary>
+            <param name="commentDto">A comment object.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.CommentsController.Delete(System.Guid)">
+            <summary>Deletes a comment.</summary>
+            <param name="id">A comment ID.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.PostsController.GetPosts">
+            <summary>Returns a list of all posts</summary>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.PostsController.GetPost(System.Guid)">
+            <summary>Returns a individual post.</summary>
+            <param name="id">A post ID.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.PostsController.CreatePost(Assignment.Blog.Dto.PostDto)">
+            <summary>Creates a post and returns its ID.</summary>
+            <param name="postDto">A post object.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.PostsController.UpdatePost(Assignment.Blog.Dto.PostDto)">
+            <summary>Updates a post and returns the updated post.</summary>
+            <param name="postDto">A post object.</param>
+        </member>
+        <member name="M:Assignment.Blog.Controllers.PostsController.Delete(System.Guid)">
+            <summary>Deletes a post.</summary>
+            <param name="id">A post ID.</param>
+        </member>
+    </members>
+</doc>

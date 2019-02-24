@@ -37,7 +37,7 @@ namespace Assignment.Blog.Controllers
 			return Created(string.Empty, createdCommentId);
 		}
 
-		/// <summary>Updates a comment and returns the updated commen.</summary>
+		/// <summary>Updates a comment and returns the updated comment.</summary>
 		/// <param name="commentDto">A comment object.</param>
 		[HttpPut]
 		public ActionResult<CommentDto> UpdateComment([FromBody] CommentDto commentDto)
@@ -47,7 +47,7 @@ namespace Assignment.Blog.Controllers
 			return Ok(updatedComment);
 		}
 
-		/// <summary>Delets a comment.</summary>
+		/// <summary>Deletes a comment.</summary>
 		/// <param name="id">A comment ID.</param>
 		[HttpDelete("{id}")]
 		public ActionResult Delete(Guid id)

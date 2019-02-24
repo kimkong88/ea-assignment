@@ -5,6 +5,13 @@
     <AssemblyName>Assignment.Blog</AssemblyName>
     <RootNamespace>Assignment.Blog</RootNamespace>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Projects\ea-assignment\src\Blog\Assignment.Blog.xml</DocumentationFile>
+    <OutputPath>bin\Debug\netcoreapp2.2\</OutputPath>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="AutoMapper" Version="8.0.0" />

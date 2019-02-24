@@ -1,5 +1,8 @@
 ﻿using System;
+using System.IO;
+using Assignment.Blog;
 using Assignment.Blog.Profiles;
+using Assignment.Common;
 using Assignment.Common.Constants;
 using Assignment.Data;
 using Autofac;
@@ -12,7 +15,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Assignment.Api
 {
@@ -79,6 +84,10 @@ namespace Assignment.Api
 			var builder = new ContainerBuilder();
 			builder.Populate(services);
 			builder.RegisterModule<ApiModule>();
+			builder.RegisterModule<DataModule>();
+			builder.RegisterModule<BlogModule>();
+			builder.RegisterModule<CommonModule>();
+
 			var container = builder.Build();
 			return container;
 		}
@@ -88,8 +97,17 @@ namespace Assignment.Api
 			services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc(ApiVersion.Version, new Info { Title = "EA Assignment API", Version = ApiVersion.Version });
-				c.DescribeAllEnumsAsStrings();
+				AddAllXmlCommentsInSwagger(c);
 			});
+		}
+
+		private static void AddAllXmlCommentsInSwagger(SwaggerGenOptions swaggerGenOptions)
+		{
+			var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+			foreach (var file in Directory.EnumerateFiles(basePath, "Assignment.*.xml"))
+			{
+				swaggerGenOptions.IncludeXmlComments(Path.Combine(basePath, file));
+			}
 		}
 	}
 }

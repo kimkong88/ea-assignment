@@ -58,7 +58,7 @@ namespace Assignment.Blog.Controllers
 			return Ok(updatedPost);
 		}
 
-		/// <summary>Delets a post.</summary>
+		/// <summary>Deletes a post.</summary>
 		/// <param name="id">A post ID.</param>
 		[HttpDelete("{id}")]
 		public ActionResult Delete(Guid id)
