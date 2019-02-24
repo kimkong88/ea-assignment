@@ -20,32 +20,34 @@ export class LoginViewComponent {
 	) {}
 
 	onButtonClick() {
-		this.validate();
-		this.authorService
-			.getAuthorByName(this.textBoxValue)
-			.toPromise()
-			.then(author => {
-				if (!author) {
-					const newAuthor: IAuthor = {
-						name: this.textBoxValue
-					};
-					this.authorService
-						.createAuthor(newAuthor)
-						.toPromise()
-						.then(() => {
-							notify('New user registered!', 'success', 600);
-						});
-				} else {
-					this.loginService.login(author);
-					this.router.navigateByUrl('/blogs');
-				}
-			});
+		if (this.validate()) {
+			this.authorService
+				.getAuthorByName(this.textBoxValue)
+				.toPromise()
+				.then(author => {
+					if (!author) {
+						const newAuthor: IAuthor = {
+							name: this.textBoxValue
+						};
+						this.authorService
+							.createAuthor(newAuthor)
+							.toPromise()
+							.then(() => {
+								notify('New user registered!', 'success', 600);
+							});
+					} else {
+						this.loginService.login(author);
+						this.router.navigateByUrl('/blogs');
+					}
+				});
+		}
 	}
 
-	validate() {
+	validate(): boolean {
 		if (!this.textBoxValue.trim()) {
 			this.validation = false;
-			return;
+			return false;
 		}
+		return true;
 	}
 }

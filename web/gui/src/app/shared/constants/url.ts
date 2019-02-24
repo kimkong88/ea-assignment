@@ -1,12 +1,9 @@
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 export const url = {
 	default: `/login`
 };
 
 export function baseUrl() {
-	if (environment.production) {
-		return `/api/v1`;
-	}
-	return `http://localhost:5000/api/v1`;
+	return environment.production ? `/api/v1` : `http://localhost:5000/api/v1`;
 }
