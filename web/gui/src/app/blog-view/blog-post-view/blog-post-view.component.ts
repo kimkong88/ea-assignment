@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import DataSource from 'devextreme/data/data_source';
-import CustomStore from 'devextreme/data/custom_store';
-import { BlogViewService } from '../blog-view-service';
+import { BlogPostService } from '../../shared/services/blog-post-service';
 import { IPost } from 'src/app/shared/models/post.model';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from './comment-service';
@@ -19,7 +17,7 @@ export class BlogPostViewComponent implements OnInit {
 	comment: string;
 
 	constructor(
-		private blogViewService: BlogViewService,
+		private blogViewService: BlogPostService,
 		private commentService: CommentService,
 		private route: ActivatedRoute
 	) {}

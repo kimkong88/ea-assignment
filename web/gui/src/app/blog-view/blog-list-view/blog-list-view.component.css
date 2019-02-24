@@ -52,8 +52,8 @@
 
 .floating-button {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: center !important;
+	align-items: center !important;
 	border-radius: 50%;
 	width: 72px;
 	height: 72px;
@@ -70,7 +70,7 @@
 	background: #008b8b;
 }
 
-i {
+::ng-deep .floating-button .dx-button-content {
 	color: white;
 	font-size: 24px;
 	-webkit-user-select: none; /* Safari */

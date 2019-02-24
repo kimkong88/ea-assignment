@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { IPost } from '../shared/models/post.model';
+import { IPost } from '../models/post.model';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { url } from '../shared/constants/url';
+import { url } from '../constants/url';
 
 const serviceUrl = `${url.base}/blog/posts`;
 
 @Injectable()
-export class BlogViewService {
+export class BlogPostService {
 	constructor(private http: HttpClient) {}
 
 	fetchPosts() {
@@ -27,6 +27,14 @@ export class BlogViewService {
 			map((response: IPost) => {
 				return response;
 			}),
+			catchError((error: HttpErrorResponse) => {
+				return throwError(error);
+			})
+		);
+	}
+
+	createPost(post: IPost) {
+		return this.http.post(`${serviceUrl}`, post).pipe(
 			catchError((error: HttpErrorResponse) => {
 				return throwError(error);
 			})

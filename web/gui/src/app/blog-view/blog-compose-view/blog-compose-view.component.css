@@ -1,0 +1,14 @@
+.publish-title {
+	font-size: 64px;
+	font-weight: bolder;
+}
+
+.publish-text-area {
+	border: none;
+	font-size: 24px;
+}
+
+.publish-button {
+	font-size: 24px;
+	float: right;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+	<dx-text-box
+		class="publish-title"
+		stylingMode="underlined"
+		mode="text"
+		placeholder="Title"
+		[(value)]="title"
+	>
+	</dx-text-box>
+	<div class="publish-area">
+		<dx-text-area
+			class="publish-text-area"
+			placeholder="Tell your story..."
+			[autoResizeEnabled]="true"
+			minHeight="240"
+			[(value)]="content"
+		>
+		</dx-text-area>
+		<dx-button
+			class="publish-button"
+			text="Publish"
+			(onClick)="publishBlogPost()"
+		></dx-button>
+	</div>
+</div>

@@ -6,6 +6,7 @@ export interface IPost {
 	title: string;
 	content: string;
 	author?: IAuthor;
+	authorId?: string;
 	authorName?: string;
 	comments?: IComment[];
 	createdDateTime?: string;

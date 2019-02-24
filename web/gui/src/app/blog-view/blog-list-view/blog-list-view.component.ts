@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import DataSource from 'devextreme/data/data_source';
 import CustomStore from 'devextreme/data/custom_store';
-import { BlogViewService } from '../blog-view-service';
+import { BlogPostService } from '../../shared/services/blog-post-service';
 import { IPost } from '../../shared/models/post.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { parseDateTimeToLocaleString } from 'src/app/shared/helpers/parse-date-time.helper';
+import * as _ from 'lodash';
 
 @Component({
 	selector: 'app-blog-list-view',
@@ -23,25 +24,31 @@ export class BlogListViewComponent {
 	});
 
 	constructor(
-		private blogViewService: BlogViewService,
+		private blogPostService: BlogPostService,
 		private router: Router
 	) {}
 
 	async loadDataSource({  }: any): Promise<any> {
-		return this.blogViewService
+		return this.blogPostService
 			.fetchPosts()
 			.toPromise()
 			.then((response: IPost[]) => {
-				response.forEach(post => {
+				let posts = response;
+				posts = _.reverse(posts);
+				posts.forEach(post => {
 					post.createdDateTime = parseDateTimeToLocaleString(
 						post.createdDateTime
 					);
 				});
-				return response;
+				return posts;
 			});
 	}
 
 	onPostClick(e: any) {
 		this.router.navigateByUrl(`/post/${e.itemData.id}`);
+	}
+
+	onFabClick() {
+		this.router.navigateByUrl(`/compose`);
 	}
 }
