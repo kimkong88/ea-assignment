@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+    gui:
+        build:
+            context: .
+            dockerfile: ./docker/gui/Dockerfile
+            target: assignment-gui-runtime
+        
+        restart: always
+        
+        ports:
+            - 80:80

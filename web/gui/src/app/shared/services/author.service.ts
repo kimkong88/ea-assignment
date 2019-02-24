@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { url } from '../constants/url';
+import { baseUrl } from '../constants/url';
 import { IAuthor } from '../models/author.model';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
-const serviceUrl = `${url.base}/blog/authors`;
+const serviceUrl = `${baseUrl()}/blog/authors`;
 
 @Injectable()
 export class AuthorService {
