@@ -19,5 +19,11 @@ namespace Assignment.Blog.Dto
 
 		[JsonProperty]
 		public Guid? PostId { get; set; }
+
+		[JsonProperty]
+		public DateTimeOffset CreatedDateTime { get; set; }
+
+		[JsonProperty]
+		public DateTimeOffset UpdatedDateTime { get; set; }
 	}
 }

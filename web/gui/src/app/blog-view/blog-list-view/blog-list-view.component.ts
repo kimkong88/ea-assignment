@@ -4,6 +4,7 @@ import CustomStore from 'devextreme/data/custom_store';
 import { BlogViewService } from '../blog-view-service';
 import { IPost } from '../../shared/models/post.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { parseDateTimeToLocaleString } from 'src/app/shared/helpers/parse-date-time.helper';
 
 @Component({
 	selector: 'app-blog-list-view',
@@ -32,8 +33,8 @@ export class BlogListViewComponent {
 			.toPromise()
 			.then((response: IPost[]) => {
 				response.forEach(post => {
-					post.createdAt = this.parseDateTimeToLocaleString(
-						post.createdAt
+					post.createdDateTime = parseDateTimeToLocaleString(
+						post.createdDateTime
 					);
 				});
 				return response;
@@ -42,15 +43,5 @@ export class BlogListViewComponent {
 
 	onPostClick(e: any) {
 		this.router.navigateByUrl(`/post/${e.itemData.id}`);
-	}
-
-	parseDateTimeToLocaleString(dateTimeString: any): string {
-		const parseDateTime = new Date(Date.parse(dateTimeString));
-		const options = {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		};
-		return new Intl.DateTimeFormat('en-US', options).format(parseDateTime);
 	}
 }

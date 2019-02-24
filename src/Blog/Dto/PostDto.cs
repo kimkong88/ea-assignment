@@ -25,9 +25,9 @@ namespace Assignment.Blog.Dto
 		public IList<CommentDto> Comments { get; set; }
 
 		[JsonProperty]
-		public DateTimeOffset CreatedAt { get; set; }
+		public DateTimeOffset CreatedDateTime { get; set; }
 
 		[JsonProperty]
-		public DateTimeOffset UpdatedAt { get; set; }
+		public DateTimeOffset UpdatedDateTime { get; set; }
 	}
 }

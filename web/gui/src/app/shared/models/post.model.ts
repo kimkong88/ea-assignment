@@ -8,6 +8,6 @@ export interface IPost {
 	author?: IAuthor;
 	authorName?: string;
 	comments?: IComment[];
-	createdAt?: string;
-	updatedAt?: string;
+	createdDateTime?: string;
+	updatedDateTime?: string;
 }

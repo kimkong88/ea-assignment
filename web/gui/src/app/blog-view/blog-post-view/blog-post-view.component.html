@@ -5,7 +5,7 @@
 			By <span>{{ post.authorName }}</span>
 		</p>
 		<p class="post-date">
-			{{ post.createdAt }}
+			{{ post.createdDateTime }}
 		</p>
 		<p class="post-content">
 			{{ post.content }}
@@ -13,7 +13,8 @@
 		<div class="comment-box">
 			<dx-text-area
 				height="120px"
-				[maxLength]="400"
+				placeholder="Write a response..."
+				[maxLength]="180"
 				[(value)]="comment"
 			></dx-text-area>
 			<dx-button
@@ -31,7 +32,17 @@
 			>
 				<div *dxTemplate="let comment of 'item'">
 					<div class="comment-card">
-						<p class="comment-author">{{ comment.authorName }}</p>
+						<p class="comment-heading">
+							By
+							<span class="comment-author">{{
+								comment.authorName
+							}}</span>
+							on
+							<span class="comment-date">
+								{{ comment.createdDateTime }}
+							</span>
+						</p>
+
 						<p class="comment-content">{{ comment.content }}</p>
 					</div>
 				</div>

@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommentService } from './comment-service';
 import { loginKey } from 'src/app/shared/services/login.service';
 import * as _ from 'lodash';
+import { parseDateTimeToLocaleString } from 'src/app/shared/helpers/parse-date-time.helper';
 
 @Component({
 	selector: 'app-blog-post-view',
@@ -34,7 +35,16 @@ export class BlogPostViewComponent implements OnInit {
 			.toPromise()
 			.then(response => {
 				this.post = response;
-				this.post.comments = _.sortBy(this.post.comments, 'createdAt');
+				this.post.createdDateTime = parseDateTimeToLocaleString(
+					this.post.createdDateTime
+				);
+				this.post.comments = _.reverse(this.post.comments);
+
+				this.post.comments.forEach(comment => {
+					comment.createdDateTime = parseDateTimeToLocaleString(
+						comment.createdDateTime
+					);
+				});
 			});
 	}
 

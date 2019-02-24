@@ -4,4 +4,6 @@ export interface IComment {
 	content: string;
 	postId: string;
 	authorId: string;
+	createdDateTime?: string;
+	updatedDateTime?: string;
 }
