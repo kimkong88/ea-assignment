@@ -36,7 +36,6 @@ export class BlogPostViewComponent implements OnInit {
 				this.post.createdDateTime = parseDateTimeToLocaleString(
 					this.post.createdDateTime
 				);
-				this.post.comments = _.reverse(this.post.comments);
 
 				this.post.comments.forEach(comment => {
 					comment.createdDateTime = parseDateTimeToLocaleString(

@@ -34,7 +34,6 @@ export class BlogListViewComponent {
 			.toPromise()
 			.then((response: IPost[]) => {
 				let posts = response;
-				posts = _.reverse(posts);
 				posts.forEach(post => {
 					post.createdDateTime = parseDateTimeToLocaleString(
 						post.createdDateTime

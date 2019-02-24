@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Assignment.Blog.Dto;
 using Assignment.Common.Helpers;
 using Assignment.Data.Entities.Blog;
@@ -22,6 +23,8 @@ namespace Assignment.Blog.Profiles
 			{
 				return new List<CommentDto>();
 			}
+
+			comments = comments.OrderByDescending(c => c.CreatedDateTime);
 
 			return Mapper.Instance.MapEnumerable<Comment, CommentDto>(comments);
 		}

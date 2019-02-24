@@ -26,7 +26,7 @@ namespace Assignment.Blog.Services
 				.Include(p => p.Author)
 				.Include(p => p.Comments);
 
-			var posts = query.ToList();
+			var posts = query.ToList().OrderByDescending(p => p.CreatedDateTime);
 
 			var postDtos = Mapper.Instance.MapEnumerable<Post, PostDto>(posts);
 
