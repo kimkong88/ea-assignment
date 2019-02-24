@@ -4760,6 +4760,8 @@
           "Autofac": "4.8.1",
           "Microsoft.EntityFrameworkCore.Design": "2.2.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "2.2.0",
+          "Microsoft.Extensions.Configuration.Json": "2.2.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.2"
         },
         "compile": {
@@ -12832,6 +12834,7 @@
       "Autofac.Extras.Moq >= 4.3.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Cors >= 2.2.0",
+      "Microsoft.Extensions.Configuration.FileExtensions >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Npgsql >= 4.0.4",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 2.1.2",
@@ -12908,6 +12911,10 @@
             "autoReferenced": true
           },
           "Microsoft.AspNetCore.Cors": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.Extensions.Configuration.FileExtensions": {
             "target": "Package",
             "version": "[2.2.0, )"
           },
