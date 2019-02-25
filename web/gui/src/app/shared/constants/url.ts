@@ -5,7 +5,5 @@ export const url = {
 };
 
 export function apiBaseUrl() {
-	return environment.production
-		? `http://127.0.0.1:5000/api/v1`
-		: `http://127.0.0.1:5001/api/v1`;
+	return environment.production ? `/api/v1` : `http://127.0.0.1:5001/api/v1`;
 }
