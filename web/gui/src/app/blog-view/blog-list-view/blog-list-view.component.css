@@ -90,3 +90,12 @@
 ::ng-deep .dx-list-next-button .dx-button:hover {
 	background-color: darkcyan;
 }
+
+::ng-deep .dx-scrollview-content .dx-empty-message {
+	font-size: 36px;
+	font-weight: bold;
+	height: 50vh;
+	line-height: 50vh;
+	color: gray;
+	text-align: center;
+}
