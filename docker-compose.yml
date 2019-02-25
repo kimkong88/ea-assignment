@@ -41,10 +41,9 @@ services:
         ports:
             - 5431:5432
         environment:
-            - POSTGRES_DB=ASSIGNMENT_DB1
-            - POSTGRES_PASSWORD=ADMIN
-            - POSTGRES_USER=EAGAMES
-
+            - POSTGRES_USER=eagames
+            - POSTGRES_PASSWORD=admin
+            - POSTGRES_DB=assignment_db
         volumes:
             - assignment-db-data:/var/lib/postgresql/data
             
