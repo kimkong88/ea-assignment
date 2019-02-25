@@ -32,7 +32,7 @@ namespace Assignment.Blog.Controllers
 		/// <param name="id">A post ID.</param>
 		[HttpGet("{id}")]
 		[Produces("application/json")]
-		public ActionResult<Post> GetPost(Guid id)
+		public ActionResult<PostDto> GetPost(Guid id)
 		{
 			PostDto post;
 			try
@@ -70,7 +70,7 @@ namespace Assignment.Blog.Controllers
 		/// <summary>Deletes a post.</summary>
 		/// <param name="id">A post ID.</param>
 		[HttpDelete("{id}")]
-		public ActionResult Delete(Guid id)
+		public ActionResult DeletePost(Guid id)
 		{
 			try
 			{

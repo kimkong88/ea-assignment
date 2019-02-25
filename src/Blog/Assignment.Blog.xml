@@ -46,7 +46,7 @@
             <summary>Updates a post and returns the updated post.</summary>
             <param name="postDto">A post object.</param>
         </member>
-        <member name="M:Assignment.Blog.Controllers.PostsController.Delete(System.Guid)">
+        <member name="M:Assignment.Blog.Controllers.PostsController.DeletePost(System.Guid)">
             <summary>Deletes a post.</summary>
             <param name="id">A post ID.</param>
         </member>

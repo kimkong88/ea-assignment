@@ -35,6 +35,7 @@ namespace Assignment.Blog.Controllers
 		{
 			var authorDto = authorService.GetAuthorByName(authorName);
 
+			// Otherwise MVC will automatically return NotFound And I needed to override that.
 			if (authorDto == null)
 			{
 				return Ok(null);

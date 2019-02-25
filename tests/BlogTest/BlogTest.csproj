@@ -23,8 +23,4 @@
     <ProjectReference Include="..\..\src\Blog\Blog.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
