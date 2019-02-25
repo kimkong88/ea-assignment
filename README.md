@@ -47,7 +47,7 @@ $ cd ea-assignment/src/api
 $ dotnet restore
 $ dotnet build
 $ dotnet ef database update
-$ dotnet start
+$ dotnet run
 ```
 To run on another host built with docker, the app requires:
 
