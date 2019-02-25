@@ -34,7 +34,16 @@ namespace Assignment.Blog.Controllers
 		[Produces("application/json")]
 		public ActionResult<Post> GetPost(Guid id)
 		{
-			var post = postService.GetPost(id);
+			PostDto post;
+			try
+			{
+				post = postService.GetPost(id);
+			}
+			catch (Exception e)
+			{
+				return NotFound(e.Message);
+			}
+
 			return Ok(post);
 		}
 
@@ -63,7 +72,14 @@ namespace Assignment.Blog.Controllers
 		[HttpDelete("{id}")]
 		public ActionResult Delete(Guid id)
 		{
-			postService.DeletePost(id);
+			try
+			{
+				postService.DeletePost(id);
+			}
+			catch (Exception e)
+			{
+				return NotFound(e.Message);
+			}
 
 			return NoContent();
 		}

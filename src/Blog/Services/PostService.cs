@@ -44,7 +44,7 @@ namespace Assignment.Blog.Services
 			if (post == null)
 			{
 				// TODO: throw appropirate exception later
-				throw new Exception();
+				throw new Exception(string.Format("Post Id {0} is not found.", id));
 			}
 
 			var postDto = Mapper.Map<Post, PostDto>(post);
@@ -69,7 +69,7 @@ namespace Assignment.Blog.Services
 			if (post == null)
 			{
 				// TODO: throw appropirate exception later
-				throw new Exception();
+				throw new Exception(string.Format("Post Id {0} is not found.", id));
 			}
 			applicationDbContext.Posts.Remove(post);
 

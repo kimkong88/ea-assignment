@@ -40,7 +40,7 @@ namespace Assignment.Blog.Services
 			if (!post)
 			{
 				// TODO: throw appropirate exception later
-				throw new Exception();
+				throw new Exception(string.Format("Post Id {0} is not found.", postId));
 			}
 
 			var commentDtos = Mapper.Instance.MapEnumerable<Comment, CommentDto>(comments);
@@ -65,7 +65,7 @@ namespace Assignment.Blog.Services
 			if (comment == null)
 			{
 				// TODO: throw appropirate exception later
-				throw new Exception();
+				throw new Exception(string.Format("Comment Id {0} is not found.", id));
 			}
 			applicationDbContext.Comments.Remove(comment);
 
