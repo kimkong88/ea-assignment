@@ -29,7 +29,7 @@ To run locally, the app requires:
 * Node - v8+
 * NPM - v6+
 * .NET Core SDK - 2.2
-* Postgresql - v10+, with role admin/admin
+* Postgresql - v10+, with role eagames/admin with create privilege
 
 
 To start Gui, install the dependencies and start the server.
@@ -46,7 +46,9 @@ To start backend, restore packages, build the solution then migrate the database
 $ cd ea-assignment/src/api
 $ dotnet restore
 $ dotnet build
+$ cd ../data
 $ dotnet ef database update
+$ cd ../api
 $ dotnet run
 ```
 To run on another host built with docker, the app requires:

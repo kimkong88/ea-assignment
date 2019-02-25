@@ -47,7 +47,13 @@ namespace Assignment.Api
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 			services.AddSingleton(Configuration);
-			services.AddCors();
+			services.AddCors(options =>
+			{
+				options.AddPolicy("CorsPolicy",
+					builder => builder.AllowAnyOrigin()
+					.AllowAnyMethod()
+					.AllowAnyHeader());
+			});
 
 			ConfigureSwaggerServices(services);
 
@@ -63,11 +69,7 @@ namespace Assignment.Api
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			app.UseCors(builder => builder
-					.AllowAnyHeader()
-					.AllowAnyOrigin()
-					.AllowCredentials()
-					.AllowAnyMethod());
+			app.UseCors("CorsPolicy");
 
 			app.UseMvc();
 

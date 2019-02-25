@@ -12877,11 +12877,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\ea-assignment\\src\\api\\Api.csproj",
+      "projectUniqueName": "C:\\Projects\\ea-assignment\\src\\Api\\Api.csproj",
       "projectName": "Assignment.Api",
-      "projectPath": "C:\\projects\\ea-assignment\\src\\api\\Api.csproj",
+      "projectPath": "C:\\Projects\\ea-assignment\\src\\Api\\Api.csproj",
       "packagesPath": "C:\\Users\\DamianKim\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\ea-assignment\\src\\api\\obj\\",
+      "outputPath": "C:\\Projects\\ea-assignment\\src\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12900,14 +12900,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\projects\\ea-assignment\\src\\Blog\\Blog.csproj": {
-              "projectPath": "C:\\projects\\ea-assignment\\src\\Blog\\Blog.csproj"
+            "C:\\Projects\\ea-assignment\\src\\Blog\\Blog.csproj": {
+              "projectPath": "C:\\Projects\\ea-assignment\\src\\Blog\\Blog.csproj"
             },
-            "C:\\projects\\ea-assignment\\src\\Common\\Common.csproj": {
-              "projectPath": "C:\\projects\\ea-assignment\\src\\Common\\Common.csproj"
+            "C:\\Projects\\ea-assignment\\src\\Common\\Common.csproj": {
+              "projectPath": "C:\\Projects\\ea-assignment\\src\\Common\\Common.csproj"
             },
-            "C:\\projects\\ea-assignment\\src\\Data\\Data.csproj": {
-              "projectPath": "C:\\projects\\ea-assignment\\src\\Data\\Data.csproj"
+            "C:\\Projects\\ea-assignment\\src\\Data\\Data.csproj": {
+              "projectPath": "C:\\Projects\\ea-assignment\\src\\Data\\Data.csproj"
             }
           }
         }
