@@ -10,7 +10,7 @@ import { loginKey } from '../shared/services/login.service';
 export class BlogViewComponent {
 	name: string;
 	constructor(private router: Router) {
-		this.router.navigateByUrl('/blogs');
+		this.router.navigateByUrl('/posts');
 		this.getName();
 	}
 

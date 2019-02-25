@@ -11,7 +11,7 @@ const appRoutes: Routes = [
 		component: BlogViewComponent,
 		children: [
 			{
-				path: 'blogs',
+				path: 'posts',
 				component: BlogListViewComponent
 			},
 			{

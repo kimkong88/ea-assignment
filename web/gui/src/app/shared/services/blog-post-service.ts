@@ -3,9 +3,9 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IPost } from '../models/post.model';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { baseUrl } from '../constants/url';
+import { apiBaseUrl } from '../constants/url';
 
-const serviceUrl = `${baseUrl()}/blog/posts`;
+const serviceUrl = `${apiBaseUrl()}/blog/posts`;
 
 @Injectable()
 export class BlogPostService {

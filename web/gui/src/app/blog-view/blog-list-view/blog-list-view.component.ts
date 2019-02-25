@@ -48,6 +48,6 @@ export class BlogListViewComponent {
 	}
 
 	onFabClick() {
-		this.router.navigateByUrl(`/compose`);
+		this.router.navigateByUrl('/compose');
 	}
 }

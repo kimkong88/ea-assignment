@@ -37,7 +37,7 @@ export class LoginViewComponent {
 							});
 					} else {
 						this.loginService.login(author);
-						this.router.navigateByUrl('/blogs');
+						this.router.navigateByUrl('/posts');
 					}
 				});
 		}

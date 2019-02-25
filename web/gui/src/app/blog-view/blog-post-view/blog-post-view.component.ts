@@ -6,7 +6,7 @@ import { CommentService } from './comment-service';
 import { loginKey } from 'src/app/shared/services/login.service';
 import * as _ from 'lodash';
 import { parseDateTimeToLocaleString } from 'src/app/shared/helpers/parse-date-time.helper';
-
+import notify from 'devextreme/ui/notify';
 @Component({
 	selector: 'app-blog-post-view',
 	templateUrl: './blog-post-view.component.html',
@@ -14,7 +14,7 @@ import { parseDateTimeToLocaleString } from 'src/app/shared/helpers/parse-date-t
 })
 export class BlogPostViewComponent implements OnInit {
 	post: IPost;
-	comment: string;
+	comment = '';
 
 	constructor(
 		private blogViewService: BlogPostService,
@@ -46,6 +46,10 @@ export class BlogPostViewComponent implements OnInit {
 	}
 
 	onSubmit() {
+		if (!this.comment.trim()) {
+			notify('Comment cannot be empty.', 'warning', 600);
+			return;
+		}
 		const comment = {
 			content: this.comment,
 			postId: this.post.id,
