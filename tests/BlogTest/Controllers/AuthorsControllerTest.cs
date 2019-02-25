@@ -42,7 +42,7 @@ namespace Assignment.Tests.BlogTest.Controllers
 		}
 
 		[Fact]
-		public void CreateAuthor_WithAuthorDto_ReturnsOkObjectResult()
+		public void CreateAuthor_WithAuthorDto_ReturnsCreatedResult()
 		{
 			using (var mock = AutoMock.GetLoose())
 			{
@@ -51,7 +51,7 @@ namespace Assignment.Tests.BlogTest.Controllers
 
 				var result = controller.CreateAuthor(new AuthorDto());
 
-				Assert.IsType<OkObjectResult>(result.Result);
+				Assert.IsType<CreatedResult>(result.Result);
 			}
 		}
 	}
