@@ -23,7 +23,17 @@ namespace Assignment.Blog.Controllers
 		[Produces("application/json")]
 		public ActionResult<IEnumerable<CommentDto>> GetCommentsByPostId(Guid postId)
 		{
-			var commentDtos = commentService.GetCommentsByPostId(postId);
+			IEnumerable<CommentDto> commentDtos;
+
+			try
+			{
+				commentDtos = commentService.GetCommentsByPostId(postId);
+			}
+			catch (Exception e)
+			{
+				return NotFound(e.Message);
+			}
+
 			return Ok(commentDtos);
 		}
 
@@ -52,7 +62,14 @@ namespace Assignment.Blog.Controllers
 		[HttpDelete("{id}")]
 		public ActionResult Delete(Guid id)
 		{
-			commentService.DeleteComment(id);
+			try
+			{
+				commentService.DeleteComment(id);
+			}
+			catch (Exception e)
+			{
+				return NotFound(e.Message);
+			}
 
 			return NoContent();
 		}
