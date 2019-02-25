@@ -8,6 +8,9 @@ Take home assignment that does following:
   - User can comment on a post
   - User can register
 
+### Live Demo
+[See Live Demo Deployed on Azure](http://13.90.21.75)
+
 ### Tech
 
 EA Assignment was built with:
