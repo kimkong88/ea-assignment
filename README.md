@@ -29,7 +29,7 @@ To run locally, the app requires:
 * Node - v8+
 * NPM - v6+
 * .NET Core SDK - 2.2
-* Postgresql - v10+, with role eagames/admin with create privilege
+* Postgresql - v10+, with role name: admin, password: admin with create privilege
 
 
 To start Gui, install the dependencies and start the server.
