@@ -29,7 +29,7 @@ services:
             - db
 
         volumes:
-            - assignment-app-data:/opt/ea-assignment
+            - app-data:/opt/ea-assignment
         
     db:
         build:
@@ -39,14 +39,15 @@ services:
 
         restart: always
         ports:
-            - 5431:5432
+            - 5432
         environment:
-            - POSTGRES_USER=eagames
-            - POSTGRES_PASSWORD=admin
             - POSTGRES_DB=assignment_db
+            - POSTGRES_PASSWORD=admin
+            - POSTGRES_USER=admin
+            
         volumes:
-            - assignment-db-data:/var/lib/postgresql/data
+            - db-data:/var/lib/postgresql/data
             
 volumes:
-    assignment-db-data:
-    assignment-app-data:
+    db-data:
+    app-data:
