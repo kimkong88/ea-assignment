@@ -67,6 +67,15 @@ $ docker-compose build
 $ docker-compose up
 ```
 
+Or alternatively you can pull from Docker Hub
+
+```sh
+$ docker pull damiankim/ea-assignment:gui-latest
+$ docker pull damiankim/ea-assignment:api-latest
+$ docker pull damiankim/ea-assignment:db-latest
+```
+
+
 ### Testing
 
 To run backend tests:
